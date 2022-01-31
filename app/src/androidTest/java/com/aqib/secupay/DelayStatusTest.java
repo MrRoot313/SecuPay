@@ -55,7 +55,7 @@ public class DelayStatusTest extends TestCase {
             assertEquals("https://httpbin.org/delay/1",responseResult.getUrl());
 
         } catch (IOException e) {
-            e.printStackTrace();//
+            e.printStackTrace();//cc
         }
 
     }
