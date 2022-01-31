@@ -41,14 +41,14 @@ public class LoginActivity extends AppCompatActivity {
         binding.btnLogin.setOnClickListener(v -> {
 
             if (binding.etUserName.getText().toString().isEmpty()) {
-                Toast.makeText(this, "Please enter username", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this,getString(R.string.enter_name_error), Toast.LENGTH_SHORT).show();
                 return;
             }
             if (binding.etPassword.getText().toString().isEmpty()) {
-                Toast.makeText(this, "Please enter password", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, getString(R.string.enter_password_error), Toast.LENGTH_SHORT).show();
                 return;
             }
-            loginViewModel.showProgressDialog(this, "Please wait while logging", 100);
+            loginViewModel.showProgressDialog(this, getString(R.string.loading_message), 100);
             loginViewModel.loginApi(binding.etUserName.getText().toString(), binding.etPassword.getText().toString());
         });
 
@@ -58,18 +58,18 @@ public class LoginActivity extends AppCompatActivity {
 
         loginViewModel.loginResponseMutableLiveData.observe(this, loginResponse -> {
             loginViewModel.hideProgressDialog();
-            Toast.makeText(this, "Logged User: " + loginResponse.getUser(), Toast.LENGTH_LONG).show();
+            Toast.makeText(this, getString(R.string.logged_user) + loginResponse.getUser(), Toast.LENGTH_LONG).show();
             NetworkUtility.callIntentWithFlags(this, MainActivity.class, true);
         });
 
         loginViewModel.serverError.observe(this, error -> {
             loginViewModel.hideProgressDialog();
-            Toast.makeText(this,"Error Code: "+error.getErrorCode()+" Error: " +error.getErrorMessage(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,getString(R.string.error_code)+error.getErrorCode()+getString(R.string.error) +error.getErrorMessage(), Toast.LENGTH_SHORT).show();
         });
 
         loginViewModel.networkError.observe(this, error -> {
             loginViewModel.hideProgressDialog();
-            Toast.makeText(this,"Error: " +error.getErrorMessage(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,getString(R.string.error) +error.getErrorMessage(), Toast.LENGTH_SHORT).show();
         });
     }
 }

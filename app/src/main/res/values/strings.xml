@@ -16,5 +16,12 @@
     <string name="get_random_status">Get a random status</string>
     <string name="mainFile">main_file</string>
     <string name="countr">counter</string>
+    <string name="counter_text">Counter: </string>
     <string name="get_delay_response">Get Counter Delay Response</string>
+    <string name="logged_user">Logged User: </string>
+    <string name="error_code">Error Code: </string>
+    <string name="error">"Error: "</string>
+    <string name="enter_name_error">Please enter username</string>
+    <string name="enter_password_error">Please enter password</string>
+    <string name="loading_message">Please wait while logging</string>
 </resources>

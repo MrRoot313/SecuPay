@@ -10,6 +10,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.aqib.secupay.R;
 import com.aqib.secupay.databinding.FragmentStatusRequestBinding;
 
 public class StatusRequestFragment extends Fragment {
@@ -32,7 +33,7 @@ public class StatusRequestFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         observeApi();
         binding.btnRandom.setOnClickListener(v -> {
-            statusCodeViewModel.showProgressDialog(getActivity(), "Please wait while processing", 0);
+            statusCodeViewModel.showProgressDialog(getActivity(), getString(R.string.loading_message), 0);
             statusCodeViewModel.getStatusCode();
         });
 

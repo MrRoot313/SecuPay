@@ -35,7 +35,6 @@ public class RestCallback <T> implements Callback {
 
     @Override
     public void onResponse(Call call, Response response) {
-//        Toast.makeText(mContext, response.message(), Toast.LENGTH_SHORT).show();
         if (call.isCanceled()) {
             return;
         }

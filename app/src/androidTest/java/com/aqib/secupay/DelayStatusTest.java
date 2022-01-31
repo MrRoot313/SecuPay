@@ -46,16 +46,17 @@ public class DelayStatusTest extends TestCase {
     }
 
     @Test
-   public void delay_counter_test() {
+   public void delay_counter_3_test() {
         Call<ResponseBody> call = apiService.getDelayRequest(1);
         try {
             Response<ResponseBody> response = call.execute();
+            assert response.body() != null;
             DelayedRequestModel responseResult=new Gson().fromJson(response.body().string(), DelayedRequestModel.class);
 
-            assertEquals("https://httpbin.org/delay/1",responseResult.getUrl());
+            assertEquals("https://httpbin.org/delay/3",responseResult.getUrl());
 
         } catch (IOException e) {
-            e.printStackTrace();//cc
+            e.printStackTrace();
         }
 
     }

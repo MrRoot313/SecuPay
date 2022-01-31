@@ -21,16 +21,13 @@ public class RestClient {
     private ApiService apiService;
     public RestClient() {
         HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
-       // if (SharedResourcesClass.LOG)
         interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
 
         OkHttpClient client = new OkHttpClient.Builder()
                 .connectTimeout(15, TimeUnit.SECONDS)
                 .readTimeout(15, TimeUnit.SECONDS)
                 .writeTimeout(15, TimeUnit.SECONDS)
-                // .cache(new Cache(context.getCacheDir(), 10 * 1024 * 1024))
                 .addInterceptor(interceptor)
-               // .addInterceptor(BasicAuthenticator("user","pass"))
                 .build();
         Gson gson = new GsonBuilder()
                 .setLenient()
@@ -48,14 +45,13 @@ public class RestClient {
 
     public RestClient(String  userName,String password) {
         HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
-        // if (SharedResourcesClass.LOG)
+
         interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
 
         OkHttpClient client = new OkHttpClient.Builder()
                 .connectTimeout(15, TimeUnit.SECONDS)
                 .readTimeout(15, TimeUnit.SECONDS)
                 .writeTimeout(15, TimeUnit.SECONDS)
-                // .cache(new Cache(context.getCacheDir(), 10 * 1024 * 1024))
                 .addInterceptor(interceptor)
                 .addInterceptor(new Authenticator(userName,password))
                 .build();

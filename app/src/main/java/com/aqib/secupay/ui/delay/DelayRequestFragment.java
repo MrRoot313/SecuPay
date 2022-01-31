@@ -11,6 +11,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.aqib.secupay.R;
 import com.aqib.secupay.databinding.FragmentDelayRequestBinding;
 import com.aqib.secupay.utils.SharedPref;
 
@@ -37,7 +38,7 @@ public class DelayRequestFragment extends Fragment {
         binding.tvCounter.setText("Counter: "+String.valueOf(SharedPref.getObj().getCounter()));
 
         binding.btnDelayRequest.setOnClickListener(v -> {
-            delayRequestViewModel.showProgressDialog(getActivity(), "Please wait while processing", 0);
+            delayRequestViewModel.showProgressDialog(getActivity(), getString(R.string.loading_message), 0);
             delayRequestViewModel.getDelayRequest(SharedPref.getObj().getCounter());
         });
 
@@ -61,7 +62,7 @@ public class DelayRequestFragment extends Fragment {
             Toast.makeText(getActivity(), error.getErrorMessage(), Toast.LENGTH_SHORT).show();
         });
         delayRequestViewModel.counter.observe(getActivity(), counter -> {
-            binding.tvCounter.setText("Counter: "+counter);
+            binding.tvCounter.setText(getString(R.string.counter_text)+counter);
         });
     }
 
