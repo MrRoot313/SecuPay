@@ -1,4 +1,4 @@
-package com.aqib.secupay.viewmodel;
+package com.aqib.secupay.ui.login;
 
 import static com.aqib.secupay.utils.AppConstants.DEFAULT_STATUS_CODES;
 import static com.aqib.secupay.utils.AppConstants.NETWORK_ERROR_MSG;

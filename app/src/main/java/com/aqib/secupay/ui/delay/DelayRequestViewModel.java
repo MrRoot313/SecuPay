@@ -59,8 +59,8 @@ public class DelayRequestViewModel extends ViewModel implements ServerConnectLis
     @Override
     public void onSuccess(Response response, int requestCode) {
         if (requestCode == 3000) {
-           // DelayedRequestModel delayedRequest = (DelayedRequestModel) response.body();
             try {
+                assert response.body() != null;
                 delayedRequestModel.setValue(((ResponseBody) response.body()).string());
                 SharedPref.getObj().setCounter(mCounter+1);
                 counter.setValue(String.valueOf(mCounter+1));

@@ -54,11 +54,6 @@ public class StatusCodeViewModel extends ViewModel implements ServerConnectListe
 
     }
 
-
-    public LiveData<String> getText() {
-        return mText;
-    }
-
     @Override
     public void onSuccess(Response response, int requestCode) {
         if (requestCode == 2000) {

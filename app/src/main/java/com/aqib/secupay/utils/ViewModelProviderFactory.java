@@ -6,7 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.aqib.secupay.viewmodel.LoginViewModel;
+import com.aqib.secupay.ui.login.LoginViewModel;
 
 public class ViewModelProviderFactory implements ViewModelProvider.Factory {
     private Application application;

@@ -1,17 +1,14 @@
 package com.aqib.secupay;
 
-import static java.util.concurrent.TimeUnit.SECONDS;
-
 import android.arch.core.executor.testing.InstantTaskExecutorRule;
 
 import androidx.test.core.app.ApplicationProvider;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
-import androidx.test.platform.app.InstrumentationRegistry;
 
 import com.aqib.secupay.models.UserLogin;
 import com.aqib.secupay.network.ApiService;
 import com.aqib.secupay.network.RestClient;
-import com.aqib.secupay.viewmodel.LoginViewModel;
+import com.aqib.secupay.ui.login.LoginViewModel;
 import junit.framework.TestCase;
 import org.junit.After;
 import org.junit.Before;

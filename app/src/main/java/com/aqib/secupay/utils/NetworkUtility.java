@@ -26,7 +26,8 @@ public class NetworkUtility {
                     }
                 }
             }
-            if (available == false) {
+            if (!available) {
+                assert connectivity != null;
                 final NetworkInfo wiMax = connectivity.getNetworkInfo(ConnectivityManager.TYPE_WIMAX);
 
                 if (wiMax != null && wiMax.isConnected()) {

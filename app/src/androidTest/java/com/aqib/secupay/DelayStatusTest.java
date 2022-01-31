@@ -2,15 +2,12 @@ package com.aqib.secupay;
 
 import android.arch.core.executor.testing.InstantTaskExecutorRule;
 
-import androidx.test.core.app.ApplicationProvider;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 
 import com.aqib.secupay.models.DelayedRequestModel;
-import com.aqib.secupay.models.UserLogin;
 import com.aqib.secupay.network.ApiService;
 import com.aqib.secupay.network.RestClient;
 import com.aqib.secupay.ui.delay.DelayRequestViewModel;
-import com.aqib.secupay.viewmodel.LoginViewModel;
 import com.google.gson.Gson;
 
 import junit.framework.TestCase;

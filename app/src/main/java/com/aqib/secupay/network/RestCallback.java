@@ -14,7 +14,6 @@ public class RestCallback <T> implements Callback {
 
     private ServerConnectListener listener;
 
-    private boolean isCanceled;
     private int requestCode;
 
 
@@ -25,13 +24,6 @@ public class RestCallback <T> implements Callback {
         this.mContext = context;
     }
 
-    public void cancel() {
-        isCanceled = true;
-    }
-
-    public boolean isCancelled() {
-        return isCanceled;
-    }
 
     @Override
     public void onResponse(Call call, Response response) {

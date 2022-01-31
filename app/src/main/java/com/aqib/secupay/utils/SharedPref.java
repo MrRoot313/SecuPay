@@ -8,7 +8,6 @@ import com.aqib.secupay.R;
 
 public class SharedPref {
     public Context context;
-    private static final String TAG = "SharedPref";
     private static SharedPref sharedPref;
 
 

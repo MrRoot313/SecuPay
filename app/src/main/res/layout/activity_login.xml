@@ -6,7 +6,7 @@
     <data>
         <variable
             name="model"
-            type="com.aqib.secupay.viewmodel.LoginViewModel" />
+            type="com.aqib.secupay.ui.login.LoginViewModel" />
     </data>
 
 
@@ -16,7 +16,7 @@
         android:background="@drawable/background"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.LoginActivity">
+        tools:context=".ui.login.LoginActivity">
 
 
         <androidx.appcompat.widget.AppCompatEditText

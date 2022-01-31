@@ -1,17 +1,12 @@
 package com.aqib.secupay;
 
-import static com.aqib.secupay.utils.AppConstants.DEFAULT_STATUS_CODES;
-
 import android.arch.core.executor.testing.InstantTaskExecutorRule;
 
-import androidx.test.core.app.ApplicationProvider;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 
-import com.aqib.secupay.models.UserLogin;
 import com.aqib.secupay.network.ApiService;
 import com.aqib.secupay.network.RestClient;
 import com.aqib.secupay.ui.status.StatusCodeViewModel;
-import com.aqib.secupay.viewmodel.LoginViewModel;
 
 import junit.framework.TestCase;
 

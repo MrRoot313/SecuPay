@@ -13,17 +13,18 @@ import androidx.lifecycle.ViewModelProvider;
 import com.aqib.secupay.R;
 import com.aqib.secupay.databinding.FragmentStatusRequestBinding;
 
+import java.util.Objects;
+
 public class StatusRequestFragment extends Fragment {
 
     private FragmentStatusRequestBinding binding;
     private StatusCodeViewModel statusCodeViewModel;
 
-    //private TextView textView;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         statusCodeViewModel =
                 new ViewModelProvider(this).get(StatusCodeViewModel.class);
-        statusCodeViewModel.setModel(getActivity().getApplication());
+        statusCodeViewModel.setModel(requireActivity().getApplication());
         binding = FragmentStatusRequestBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
@@ -41,21 +42,22 @@ public class StatusRequestFragment extends Fragment {
 
     void observeApi() {
 
-        statusCodeViewModel.mText.observe(getActivity(), response -> {
+        statusCodeViewModel.mText.observe(requireActivity(), response -> {
             statusCodeViewModel.hideProgressDialog();
             binding.tvRandomCode.setText(response);
 
         });
 
-        statusCodeViewModel.serverError.observe(getActivity(), error -> {
+        statusCodeViewModel.serverError.observe(requireActivity(), error -> {
             statusCodeViewModel.hideProgressDialog();
-            binding.tvRandomCode.setText(String.valueOf(error.getErrorCode())+" "+error.getErrorMessage()); });
+            binding.tvRandomCode.setText(String.format("%s %s", error.getErrorCode(), error.getErrorMessage())); });
 
-        statusCodeViewModel.networkError.observe(getActivity(), error -> {
+        statusCodeViewModel.networkError.observe(requireActivity(), error -> {
             statusCodeViewModel.hideProgressDialog();
-            binding.tvRandomCode.setText(String.valueOf(error.getErrorCode())+" "+error.getErrorMessage());
+            binding.tvRandomCode.setText(String.format("%s %s", error.getErrorCode(), error.getErrorMessage()));
         });
     }
+
 
     @Override
     public void onDestroyView() {
